@@ -25,8 +25,27 @@ const store = (req, res) => {
     .catch((error) => res.send(error));
 };
 
+const update = (req, res) => {
+  const { id } = req.params;
+  const { name, price, stock, status } = req.body;
+  db.collection("products")
+    .findOneAndReplace({ _id: ObjectId(id) }, { name, price, stock, status })
+    .then((result) => res.send(result))
+    .catch((error) => res.send(error));
+};
+
+const deletes = (req, res) => {
+  const { id } = req.params;
+  db.collection("products")
+    .deleteOne({ _id: ObjectId(id) })
+    .then(() => res.send("delete succes"))
+    .catch((error) => res.send(error));
+};
+
 module.exports = {
   index,
   view,
   store,
+  update,
+  deletes,
 };
