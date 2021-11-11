@@ -1,3 +1,4 @@
+require("./config/mongoose");
 const express = require("express");
 const app = express();
 const router = require("./router/home");
