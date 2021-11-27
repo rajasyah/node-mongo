@@ -2,7 +2,7 @@ const { MongoClient } = require("mongodb");
 
 const url =
   "mongodb://rajasyah:rajasyah20032003@localhost:27017?authSource=eduwork";
-const client = new MongoClient(url);
+const client = new MongoClient(process.env.MONGODB_URI || url);
 
 (async () => {
   try {
