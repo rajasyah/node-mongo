@@ -7,7 +7,7 @@ const productRouter2 = require("./router/productMongoose");
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-app.get("/", (req, res) => {
+app.use("/", (req, res) => {
   res.send({
     status: "success",
     message: "welcome to Mongodb",
