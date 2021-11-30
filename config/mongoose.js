@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb://rajasyah:rajasyah20032003@localhost:27017/eduwork-mongoose?authSource=eduwork"
+  "mongodb://rajasyah:rajasyah20032003@localhost:27017/eduwork-mongoose?authSource=eduwork"
+  // "mongodb+srv://rajasyah:rajasyah20032003@database.idchx.mongodb.net/Database?retryWrites=true&w=majority"
 );
 
 const db = mongoose.connection;
